@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Universities_List_Project.Models;
+using Newtonsoft.Json;
 
 namespace Universities_List_Project.Controllers
 {
@@ -15,7 +16,7 @@ namespace Universities_List_Project.Controllers
         HttpClient httpClient;
         static string BASE_URL = "http://universities.hipolabs.com/search?country";
 
-        public object JsonConvert { get; private set; }
+        //public object JsonConvert { get; private set; }
 
         //https://apipheny.io/free-api/
         //world_universities_and_domains.json
@@ -27,10 +28,11 @@ namespace Universities_List_Project.Controllers
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            string UNIVERSITIES_LIST_PROJECT_PATH = BASE_URL + "search?country";
+            string UNIVERSITIES_LIST_PROJECT_PATH = BASE_URL;// + "search?country";
             string universitiesData = "";
 
-            Universities College = null;
+            //Universities_List_Project.Models.Universities College = null;
+            List<University> College = null;
 
             httpClient.BaseAddress = new Uri(UNIVERSITIES_LIST_PROJECT_PATH);
 
@@ -45,7 +47,7 @@ namespace Universities_List_Project.Controllers
                 if (!universitiesData.Equals(""))
                 {
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
-                    //College = JsonConvert.DeserializeObject<Universities>(universitiesData);
+                    College = JsonConvert.DeserializeObject<List<University>>(universitiesData);
                 }
             }
             catch (Exception e)
