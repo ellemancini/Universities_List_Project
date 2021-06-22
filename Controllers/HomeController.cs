@@ -27,16 +27,16 @@ namespace Universities_List_Project.Controllers
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            string UNIVERSITIES_API_PATH = BASE_URL + "search?country";
+            string UNIVERSITIES_LIST_PROJECT_PATH = BASE_URL + "search?country";
             string universitiesData = "";
 
             Universities College = null;
 
-            httpClient.BaseAddress = new Uri(UNIVERSITIES_API_PATH);
+            httpClient.BaseAddress = new Uri(UNIVERSITIES_LIST_PROJECT_PATH);
 
             try
             {
-                HttpResponseMessage response = httpClient.GetAsync(UNIVERSITIES_API_PATH).GetAwaiter().GetResult();
+                HttpResponseMessage response = httpClient.GetAsync(UNIVERSITIES_LIST_PROJECT_PATH).GetAwaiter().GetResult();
                 if (response.IsSuccessStatusCode)
                 {
                     universitiesData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
