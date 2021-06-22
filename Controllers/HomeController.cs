@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Universities_List_Project.Models;
 
@@ -11,27 +12,49 @@ namespace Universities_List_Project.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        HttpClient httpClient;
+        static string BASE_URL = "http://universities.hipolabs.com/search?country";
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        public object JsonConvert { get; private set; }
+
+        //https://apipheny.io/free-api/
+        //world_universities_and_domains.json
 
         public IActionResult Index()
         {
-            return View();
-        }
+            httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+            string UNIVERSITIES_API_PATH = BASE_URL + "search?country";
+            string universitiesData = "";
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            Universities College = null;
+
+            httpClient.BaseAddress = new Uri(UNIVERSITIES_API_PATH);
+
+            try
+            {
+                HttpResponseMessage response = httpClient.GetAsync(UNIVERSITIES_API_PATH).GetAwaiter().GetResult();
+                if (response.IsSuccessStatusCode)
+                {
+                    universitiesData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                }
+
+                if (!universitiesData.Equals(""))
+                {
+                    // JsonConvert is part of the NewtonSoft.Json Nuget package
+                    //College = JsonConvert.DeserializeObject<Universities>(universitiesData);
+                }
+            }
+            catch (Exception e)
+            {
+                // This is a useful place to insert a breakpoint and observe the error message
+                Console.WriteLine(e.Message);
+            }
+            return View(College);
+
         }
     }
 }
