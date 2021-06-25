@@ -1,8 +1,209 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Raleway", Arial, Helvetica, sans-serif
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    .myLink {
+        display: none
+    }
+</style>
+<body class="w3-light-grey">
+
+    <!-- Navigation Bar -->
+    <div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+        <a href="#" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Global University Search</b></a>
+        <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+        <img class="w3-image" src="https://www.aftergraduation.co.in/wp-content/uploads/2016/12/Global-Universities-Ranking-2016-for-Employability.jpg" alt="London" width="1500" height="700">
+        <div class="w3-display-middle" style="width:65%">
+            <div class="w3-bar w3-white">
+                <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Country');"><i class="fa fa-globe w3-margin-right"></i>Country</button>
+                <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'City');"><i class="fa fa-location-arrow w3-margin-right"></i>City</button>
+                <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'University');"><i class="fa fa-university w3-margin-right"></i>University</button>
+            </div>
+
+            <!-- Tabs -->
+            <div id="Country" class="w3-container w3-white w3-padding-16 myLink">
+                <h3>Find Your Perfect Educational Experience</h3>
+                <div class="w3-row-padding" style="margin:0 -16px;">
+                    <div class="w3-half"> 
+                            <label> Select Country </label>
+                            <input class="w3-input w3-border" type="text">
+                    </div>
+                    <div class="w3-half">
+                        <label>University</label>
+                        <input class="w3-input w3-border" type="text" placeholder="University List">
+                    </div>
+                </div>
+                <p><button class="w3-button w3-dark-grey">Search</button></p>
+            </div>
+
+            <div id="City" class="w3-container w3-white w3-padding-16 myLink">
+                <h3>Find the Perfect Location</h3>
+                <p><button class="w3-button w3-dark-grey">Search Cities</button></p>
+            </div>
+
+            <div id="University" class="w3-container w3-white w3-padding-16 myLink">
+                <h3>Your Education is Paramount</h3>
+                <p><button class="w3-button w3-dark-grey">Search Universities Around the World</button></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:1100px;">
+
+        <!-- About Global University Search -->
+        <div class="w3-container w3-margin-top">
+            <h3>About Global University Search</h3>
+        </div>
+        <p>
+            Global University Search is a dedicated service to allow anyone to find their perfect location and University to enhance their educational experience. We are pleased to be a top search engine for students and faculty looking to expand their search globally. Our site has a full catalog of Universities listed by Country allowing people to search for their perfect destination.
+        </p>
+        <!-- Top 5 Universities in the World -->
+
+
+        <div class="w3-container">
+            <h3>Top 5 Universities in the World</h3>
+            <p>Click on a University to Learn more.</p>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-half w3-margin-bottom">
+                <a href="https://web.mit.edu/"><img src="https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/MIT_16x9_0.jpg?itok=iXF5-4PI" alt="Massachusetts Institute of Technology" style="width:100%"></a>
+                <div class="w3-container w3-white">
+                    <h3>Massachusetts Institute of Technology</h3>
+                </div>
+            </div>
+            <div class="w3-half w3-margin-bottom">
+                <a href="https://www.harvard.edu/">
+                    <img src="https://www.harvardmagazine.com/sites/default/files/img/article/0421/hm_4.6.21_admissions-1_sm.jpg" alt="Harvard University" style="width:100%">
+                </a>
+                <div class="w3-container w3-white">
+                    <h3>Harvard University</h3>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-half w3-margin-bottom">
+                <a href="https://www.stanford.edu/">
+                    <img src="https://img.locationscout.net/images/2019-06/stanford-university-california-usa-nple_l.jpeg" alt="Stanford University, California" style="width:100%">
+                </a>
+                <div class="w3-container w3-white">
+                    <h3>Stanford University, California</h3>
+                </div>
+            </div>
+            <div class="w3-half w3-margin-bottom">
+                <a href="https://www.cam.ac.uk/">
+                    <img src="https://cdn.getyourguide.com/img/location/5c10eb2e55553.jpeg/88.jpg" alt="University of Cambridge, UK" style="width:100%">
+                </a>
+                <div class="w3-container w3-white">
+                    <h3>University of Cambridge, UK</h3>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-half w3-margin-bottom">
+                <a href="https://www.berkeley.edu/">
+                    <img src="https://timelybuzz.com/wp-content/uploads/2016/10/California_Univ_Campus_Wiki_MI600.jpg" alt="University of California, Berkeley" style="width:100%">
+                    <div class="w3-container w3-white">
+                        <h3>University of California, Berkeley</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Countries with Most Universities -->
+    <div class="w3-row w3-padding-64" id="Countries with the most Universities">
+        <h1 class="w3-center">Countries with the most Universities</h1><br>
+        <!DOCTYPE html>
+        <html>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <body>
+
+            <center><canvas id="myChart" style="width:100%;max-width:600px"></center></canvas>
+
+            <script>
+                var xValues = ["India", "United States", "Argentina", "Spain", "Mexico"];
+
+                var yValues = [8410, 5762, 1709, 1417, 1343, 0];
+                var barColors = ["grey", "grey", "grey", "grey", "grey"];
+
+                new Chart("myChart", {
+                    type: "bar",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: "Universities in Country"
+                        }
+                    }
+                });
+            </script>
+
+        </body>
+    </html>
+
+    <hr>
+
+
+    <!-- Contact -->
+    <div class="w3-container">
+        <h2>Contact</h2>
+        <p>For Questions, Please use the messaging system below.</p>
+        <i class="fa fa-map-marker" style="width:30px"></i> Tampa, US<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +1 813 555 9999<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: globalsearch@uni.com<br>
+        <form action="/action_page.php" target="_blank">
+            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+            <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+            <p><button class="w3-button w3-black w3-padding-large" type="submit">SEND MESSAGE</button></p>
+        </form>
+    </div>
+
+    <!-- End page content -->
 </div>
+</div>
+<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+    </footer>
+
+<script>
+    // Tabs
+    function openLink(evt, linkName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("myLink");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(linkName).style.display = "block";
+        evt.currentTarget.className += " w3-red";
+    }
+
+    // Click on the first tablink on load
+    document.getElementsByClassName("tablink")[0].click();
+</script>
+
+</body>
+</html>
