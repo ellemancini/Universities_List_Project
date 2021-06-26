@@ -13,12 +13,12 @@ namespace Universities_List_Project.Models
 
     public class University
     {
-        public string[] domains { get; set; }
-        public string[] web_pages { get; set; }
-        public string name { get; set; }
-        public string alpha_two_code { get; set; }
-        public string stateprovince { get; set; }
-        public string country { get; set; }
+        public string[] Domains { get; set; }
+        public string[] Web_pages { get; set; }
+        public string Name { get; set; }
+        public string Alpha_two_code { get; set; }
+        public string Stateprovince { get; set; }
+        public string Country { get; set; }
     }
 }
 
